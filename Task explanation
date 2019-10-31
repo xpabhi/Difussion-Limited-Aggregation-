@@ -1,0 +1,23 @@
+1.  Program in python
+
+2. Here function “StickessEstimation” and “NearbyProbablity” is introduces where a sample is taken, and its stickiness is calculated. 
+Sample is taken in uniform way.  K or stickiness is calculated on that sample only. It would help in reducing the computation time. ‘X’ below refers to the sample points taken from an 10x10 matrix. 
+Steps to calculate Stickness
+•	Take a sample which is spread across the matrix. e.g. Sample collected 400
+•	Check for the number of 1’s found in the sample. e.g. 1’s are 100
+•	Check the individual stickiness of 1’s by checking empty neighbouring cells near it.  e.g. 6 empty cells out of 8 neighbouring cells. Individual Stickness = 6/8.
+•	Take the average of all the individual Stickness. i.e. Sum (Individual Stickness)/Total 1’s in sample
+•	Sticikenss of matrix:
+( Sum (Individual Stickness)/Total 1’s in sample  ) * (Total 1’s in sample / Total Sample points) 
+Sticikenss of matrix  = Sum (Individual Stickness)/ Total Sample points
+
+3. Function “GetCellperK” is introduced. It adjusts the sticking property depending on the “K” value passed to it. It takes K and the current density of particles around a particle to decide whether to stick to a cell or continue the random 2D walk. 
+
+
+•	A Stickiness parameter K is introduced here as an input
+•	Program will try to match this stickiness level in the matrix  while particles are doing random walk before they get struck to a structure/particle and stuck there forever.
+•	K is checked whether it’s lower than the current Stickiness and if it is, an empty neighboring cell is provided to the randomly walking particle and it continues the walk. 
+•	The calculated K and Expected K is compared for model accuracy.
+
+The stickiness parameter “K” can be passed to the program and would generate the desired output.
+
